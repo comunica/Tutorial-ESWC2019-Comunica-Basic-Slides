@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="foaf: http://xmlns.com/foaf/0.1/">
+    <title>Comunica Tutorial Slides - Basics</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="node_modules/shower-material/styles/styles.css">
+    <link rel="stylesheet" href="styles/comunica-custom.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+    
+    <link rel="foaf:maker" href="https://www.rubensworks.net/#me" />
+
+    <style>
+      .shower {
+        --slide-ratio: calc(16 / 9);
+      }
+    </style>
+  </head>
+
+  <body class="shower list" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# org: http://www.w3.org/ns/org# schema: http://schema.org/ cite: http://purl.org/spar/cito/" typeof="schema:PresentationDigitalDocument">
+    <header class="caption">
+      <div class="title">
+        <h1 property="schema:name">Comunica Tutorial Slides - Basics</h1>
+      </div>
+      <div class="captiondata">
+        <p class="author" rel="schema:author"><a href="https://data.verborgh.org/people/joachim_van_herwegen">Joachim Van Herwegen</a>, <a href="https://www.rubensworks.net/#me">Ruben Taelman</a></p>
+        <p class="venue">
+          <a href="https://en.wikipedia.org/wiki/Portoro%C5%BE">Portorož, Slovenia</a>, <span rel="schema:datePublished">3 June 2019</span></a>
+        </p>
+      </div>
+    </header>
+
+    <section id="title" class="slide title">
+      <h2>Comunica Tutorial Slides - Basics</h2>
+      <ul class="author inline">
+          <li class="current">Joachim Van Herwegen</li>
+          <li class="current"><a href="https://www.rubensworks.net/">Ruben Taelman</a></li>
+      </ul>
+      <p class="affiliation"><a href="http://idlab.technology/">Ghent University – imec – IDLab, Belgium</a></p>
+    </section>
+    
+    <section id="start" class="slide">
+        <h2 class="big">Some title</h2>
+        <ul>
+            <li>
+                Something else
+            </li>
+        </ul>
+    </section>
+    
+    <section id="index" class="slide index">
+      <ul>
+        <li><a href="#index-a">Part A</a></li>
+        <li><a href="#index-b">Part B</a></li>
+        <li><a href="#index-c">Part C</a></li>
+      </ul>
+    </section>
+    
+    <section id="index-a" class="slide index">
+      <ul>
+        <li class="current"><a href="#index-a">Part A</a></li>
+        <li><a href="#index-b">Part B</a></li>
+        <li><a href="#index-c">Part C</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="license">
+            &#169; <span property="schema:copyrightYear">2019</span> Joachim Van Herwegen and <a href="https://www.rubensworks.net" rel="schema:copyrightHolder"><span resource="https://www.rubensworks.net/#me">Ruben Taelman</span></a>
+            — <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" property="schema:license">Creative Commons Attribution 4.0</a>, unless otherwise indicated.
+      </p>
+      <a href="https://github.com/comunica/Tutorial-ESWC2019-Comunica-Basic-Slides">Source</a>
+    </footer>
+
+    <script src="node_modules/shower-core/shower.min.js"></script>
+  </body>
+</html>
