@@ -40,14 +40,25 @@
       </ul>
       <p class="affiliation"><a href="http://idlab.technology/">Ghent University – imec – IDLab, Belgium</a></p>
     </section>
+
+    <section id="intro" class="slide">
+      <h2 class="big">INTRODUCTION TODO</h2>
+      <ul>
+        <li>
+          Something that catches the eye
+        </li>
+      </ul>
+    </section>
     
-    <section id="start" class="slide">
-        <h2 class="big">Some title</h2>
-        <ul>
-            <li>
-                Something else
-            </li>
-        </ul>
+    <section id="start-summary" class="slide">
+      <h2 class="big">Comunica - Summary</h2>
+      <ul>
+        <li>SPARQL query engine</li>
+        <li>Modular</li>
+        <li>Reusable semantic configuration</li>
+        <li>Heterogeneous interfaces</li>
+        <li>Federated</li>
+      </ul>
     </section>
     
     <section id="index" class="slide index">
@@ -63,6 +74,158 @@
         <li class="current"><a href="#index-a">Part A</a></li>
         <li><a href="#index-b">Part B</a></li>
         <li><a href="#index-c">Part C</a></li>
+      </ul>
+    </section>
+
+    <section id="tpf" class="slide">
+      <h2 class="big">Triple Pattern Fragments</h2>
+      <ul>
+        <li>2014: <em>Querying Datasets on the Web with High Availability</em> (Verborgh et al.)</li>
+        <li>Alternative interface for exposing linked data</li>
+        <li>Created a SPARQL client that supports these interfaces</li>
+      </ul>
+      <img src="img/ldf.png" style="max-width:100%"/>
+    </section>
+
+    <section id="tpf2" class="slide">
+      <h2 class="big">Triple Pattern Fragments</h2>
+      <ul>
+        <li><em>Bindings-Restricted Triple Pattern Fragments</em> (Hartig et al.)</li>
+        <li><em>Opportunistic Linked Data Querying through Approximate Membership Metadata</em> (Vander Sande et al.)</li>
+        <li><em>Substring Filtering for Low-Cost Linked Data Interfaces</em> (Van Herwegen et al.)</li>
+      </ul>
+      <p><strong>Different branches/clients to support these features</strong></p>
+    </section>
+
+    <section id="why1" class="slide">
+      <h2 class="big">Why</h2>
+      <ul>
+        <li><strong>Easily support TPF extensions and variants</strong></li>
+      </ul>
+    </section>
+
+    <section id="reusable" class="slide">
+      <h2 class="big">Reusable setup</h2>
+      <ul>
+        <li>Problem: repeat experiments, reproduce results, reuse new systems</li>
+        <li>Wanted an easy way to share our setup and support reproducibility</li>
+        <li>Eat your own dogfood: do this semantically</li>
+      </ul>
+    </section>
+
+    <section id="why2" class="slide">
+      <h2 class="big">Why</h2>
+      <ul>
+        <li>Easily support TPF extensions and variants</li>
+        <li><strong>Semantic configuration</strong></li>
+      </ul>
+    </section>
+
+    <section id="modular" class="slide">
+      <h2 class="big">Modular system</h2>
+      <ul>
+        <li>Quickly switch between different setups</li>
+        <li>Change specific part in setup and keep everything else the same</li>
+        <li>Compare the features you want to compare</li>
+        <li>Easily add new features without having to rebuild other requirements</li>
+      </ul>
+    </section>
+
+    <section id="why3" class="slide">
+      <h2 class="big">Why</h2>
+      <ul>
+        <li>Easily support TPF extensions and variants</li>
+        <li>Semantic configuration</li>
+        <li><strong>Modular system</strong></li>
+      </ul>
+    </section>
+
+    <section id="index-a" class="slide index">
+      <ul>
+        <li class="current"><a href="#index-a">Part A</a></li>
+        <li><a href="#index-b">Part B</a></li>
+        <li><a href="#index-c">Part C</a></li>
+      </ul>
+    </section>
+
+    <section id="actor-model" class="slide">
+      <h2>Modularity using the <em>actor</em> model</h2>
+      <p class="next">Logic is separated into different <em>actors</em>.</p>
+      <p class="next">Each actor <em>independently</em> performs a <em>specific task</em>.</p>
+      <p>
+      <ul class="next" style="font-style: italic">
+        <li>JSON-LD parsing actor</li>
+        <li>SPARQL union actor A</li>
+        <li>SPARQL union actor B</li>
+      </ul>
+      </p>
+    </section>
+
+    <section id="actor-mediator-bus" class="slide">
+      <h2>Actors can be <em>combined</em> for solving more <em>complex tasks</em>.</h2>
+      <p class="next">Actors subscribe to task-specific <em>buses</em>.</p>
+      <p class="next"><em>Mediators</em> are responsible for selecting an actor to solve a certain task.</p>
+      <p class="next center">
+        <img src="img/actor-mediator-bus.svg" style="max-width:100%">
+      </p>
+    </section>
+
+    <section id="actor-mediator-bus-example" class="slide">
+      <h2>Example: Parse as fast as possible</h2>
+      <p class="next center">
+        <img src="img/run-test-phases.svg" style="max-width:100%">
+      </p>
+    </section>
+
+    <section id="modules" class="slide">
+      <h2>Modules are wired together through semantic configuration files</h2>
+      <p class="next"><a href="https://componentsjs.readthedocs.io/en/latest/">Components.js</a>: a semantic dependency injection framework.</p>
+      <p class="next">Configuration files declare and parameterize actors, mediators and buses.</p>
+    </section>
+
+    <section id="index-a" class="slide index">
+      <ul>
+        <li class="current"><a href="#index-a">Part A</a></li>
+        <li><a href="#index-b">Part B</a></li>
+        <li><a href="#index-c">Part C</a></li>
+      </ul>
+    </section>
+
+    <section id="implementation-details" class="slide">
+      <h2>Implementation details</h2>
+      <ul>
+        <li>Open-source under MIT license</li>
+        <li>Implemented in TypeScript/JavaScript</li>
+        <li>114 separate modules <em>(actors, buses, mediators)</em></li>
+        <li>1619 unit tests with a coverage of 100%</li>
+        <li>Compatible with JavaScript API specification of RDFJS (W3C community group)</li>
+      </ul>
+    </section>
+
+    <section id="features" class="slide">
+      <h2>Current features</h2>
+      <ul>
+        <li>
+          Nearly full SPARQL 1.1 support
+          <span style="color:gray; float:right">Handled with an internal SPARQL algebra</span>
+        </li>
+        <li>
+          GraphQL queries
+          <span style="color:gray; float:right">GraphQL is translated to SPARQL algebra</span>
+        </li>
+        <li>
+          Federated querying of heterogeneous sources:
+          <span style="color:gray; float:right">Any combination of sources</span>
+        </li>
+        <li>
+          <ul>
+            <li>Linked Data document</li>
+            <li>Triple Pattern Fragment</li>
+            <li>SPARQL endpoint</li>
+            <li>HDT files</li>
+            <li>RDFJS Source</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
