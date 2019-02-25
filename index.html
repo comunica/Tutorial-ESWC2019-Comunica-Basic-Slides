@@ -42,43 +42,45 @@
     </section>
 
     <section id="intro" class="slide">
-      <h2 class="big">INTRODUCTION TODO</h2>
-      <ul>
-        <li>
-          Something that catches the eye
-        </li>
+      <h2 class="big">Combining heterogeneous interfaces</h2>
+      <ul style="max-width:50%; float: left">
+        <li>Many clients only support only a single interface</li>
+        <li>New interface gets created => new client is required</li>
+        <li>Limits the combination of existing interfaces and adaptation of new ones</li>
       </ul>
+      <img src="img/square-peg.jpg" style="max-width:100%; float: right"/>
     </section>
     
     <section id="start-summary" class="slide">
-      <h2 class="big">Comunica - Summary</h2>
-      <ul>
+      <h2 class="big">Comunica is many things</h2>
+      <ul style="float: left">
         <li>SPARQL query engine</li>
         <li>Modular</li>
         <li>Reusable semantic configuration</li>
         <li>Heterogeneous interfaces</li>
         <li>Federated</li>
       </ul>
+      <img src="img/comunica.png" style="max-width:100%; float: right"/>
     </section>
     
     <section id="index" class="slide index">
       <ul>
-        <li><a href="#index-a">Part A</a></li>
-        <li><a href="#index-b">Part B</a></li>
-        <li><a href="#index-c">Part C</a></li>
+        <li><a href="#index-a">Motivation</a></li>
+        <li><a href="#index-b">Features</a></li>
+        <li><a href="#index-c">Implementation</a></li>
       </ul>
     </section>
     
     <section id="index-a" class="slide index">
       <ul>
-        <li class="current"><a href="#index-a">Part A</a></li>
-        <li><a href="#index-b">Part B</a></li>
-        <li><a href="#index-c">Part C</a></li>
+        <li class="current"><a href="#index-a">Motivation</a></li>
+        <li><a href="#index-b">Features</a></li>
+        <li><a href="#index-c">Implementation</a></li>
       </ul>
     </section>
 
     <section id="tpf" class="slide">
-      <h2 class="big">Triple Pattern Fragments</h2>
+      <h2 class="big">Triple Pattern Fragments as an alternative RDF interface</h2>
       <ul>
         <li>2014: <em>Querying Datasets on the Web with High Availability</em> (Verborgh et al.)</li>
         <li>Alternative interface for exposing linked data</li>
@@ -88,7 +90,7 @@
     </section>
 
     <section id="tpf2" class="slide">
-      <h2 class="big">Triple Pattern Fragments</h2>
+      <h2 class="big">Triple Pattern Fragments has many extensions</h2>
       <ul>
         <li><em>Bindings-Restricted Triple Pattern Fragments</em> (Hartig et al.)</li>
         <li><em>Opportunistic Linked Data Querying through Approximate Membership Metadata</em> (Vander Sande et al.)</li>
@@ -97,27 +99,12 @@
       <p><strong>Different branches/clients to support these features</strong></p>
     </section>
 
-    <section id="why1" class="slide">
-      <h2 class="big">Why</h2>
-      <ul>
-        <li><strong>Easily support TPF extensions and variants</strong></li>
-      </ul>
-    </section>
-
     <section id="reusable" class="slide">
-      <h2 class="big">Reusable setup</h2>
+      <h2 class="big">Experiment data </h2>
       <ul>
         <li>Problem: repeat experiments, reproduce results, reuse new systems</li>
         <li>Wanted an easy way to share our setup and support reproducibility</li>
         <li>Eat your own dogfood: do this semantically</li>
-      </ul>
-    </section>
-
-    <section id="why2" class="slide">
-      <h2 class="big">Why</h2>
-      <ul>
-        <li>Easily support TPF extensions and variants</li>
-        <li><strong>Semantic configuration</strong></li>
       </ul>
     </section>
 
@@ -131,20 +118,20 @@
       </ul>
     </section>
 
-    <section id="why3" class="slide">
-      <h2 class="big">Why</h2>
+    <section id="why" class="slide">
+      <h2 class="big">Motivation</h2>
       <ul>
         <li>Easily support TPF extensions and variants</li>
         <li>Semantic configuration</li>
-        <li><strong>Modular system</strong></li>
+        <li>Modular system</li>
       </ul>
     </section>
 
-    <section id="index-a" class="slide index">
+    <section id="index-b" class="slide index">
       <ul>
-        <li class="current"><a href="#index-a">Part A</a></li>
-        <li><a href="#index-b">Part B</a></li>
-        <li><a href="#index-c">Part C</a></li>
+        <li><a href="#index-a">Motivation</a></li>
+        <li class="current"><a href="#index-b">Features</a></li>
+        <li><a href="#index-c">Implementation</a></li>
       </ul>
     </section>
 
@@ -152,18 +139,17 @@
       <h2>Modularity using the <em>actor</em> model</h2>
       <p class="next">Logic is separated into different <em>actors</em>.</p>
       <p class="next">Each actor <em>independently</em> performs a <em>specific task</em>.</p>
-      <p>
       <ul class="next" style="font-style: italic">
         <li>JSON-LD parsing actor</li>
+        <li>Turtle parsing actor</li>
         <li>SPARQL union actor A</li>
         <li>SPARQL union actor B</li>
       </ul>
-      </p>
     </section>
 
     <section id="actor-mediator-bus" class="slide">
       <h2>Actors can be <em>combined</em> for solving more <em>complex tasks</em>.</h2>
-      <p class="next">Actors subscribe to task-specific <em>buses</em>.</p>
+      <p class="next">Actors are grouped in task-specific <em>buses</em>.</p>
       <p class="next"><em>Mediators</em> are responsible for selecting an actor to solve a certain task.</p>
       <p class="next center">
         <img src="img/actor-mediator-bus.svg" style="max-width:100%">
@@ -181,13 +167,14 @@
       <h2>Modules are wired together through semantic configuration files</h2>
       <p class="next"><a href="https://componentsjs.readthedocs.io/en/latest/">Components.js</a>: a semantic dependency injection framework.</p>
       <p class="next">Configuration files declare and parameterize actors, mediators and buses.</p>
+      <p class="next">Links all the independent building blocks together, without having to do this in the code!</p>
     </section>
 
-    <section id="index-a" class="slide index">
+    <section id="index-c" class="slide index">
       <ul>
-        <li class="current"><a href="#index-a">Part A</a></li>
-        <li><a href="#index-b">Part B</a></li>
-        <li><a href="#index-c">Part C</a></li>
+        <li><a href="#index-a">Motivation</a></li>
+        <li><a href="#index-b">Features</a></li>
+        <li class="current"><a href="#index-c">Implementation</a></li>
       </ul>
     </section>
 
@@ -219,14 +206,94 @@
         </li>
         <li>
           <ul>
-            <li>Linked Data document</li>
-            <li>Triple Pattern Fragment</li>
-            <li>SPARQL endpoint</li>
+            <li>Linked Data documents</li>
+            <li>Triple Pattern Fragments</li>
+            <li>SPARQL endpoints</li>
             <li>HDT files</li>
-            <li>RDFJS Source</li>
+            <li>RDFJS Sources</li>
           </ul>
         </li>
       </ul>
+    </section>
+
+    <section id="implementation-details" class="slide">
+        <h2>Command Line Interface</h2>
+        <p>After installing <code>@comunica/actor-init-sparql</code> package</p>
+        <p>Outputs the resulting bindings</p>
+        <pre>
+comunica-sparql &#x3C;datasource-url(s)&#x3E; &#x3C;query&#x3E;
+        </pre>
+        <pre class="next">
+comunica-sparql http://fragments.dbpedia.org/2015-10/en \
+            "SELECT * WHERE { ?s ?p ?o } LIMIT 100"
+        </pre>
+    </section>
+
+    <section id="implementation-details" class="slide">
+        <h2>SPARQL Interface</h2>
+        <p>After installing <code>@comunica/actor-init-sparql</code> package</p>
+        <p>Provides a functioning SPARQL endpoint</p>
+        <pre>
+comunica-sparql-http &#x3C;context&#x3E;
+        </pre>
+        <pre class="next">
+comunica-sparql-http \
+    '{ "sources": [{ "type": "auto", "value" : \
+        "http://fragments.dbpedia.org/2015/en" }]}'
+        </pre>
+    </section>
+
+    <section id="implementation-details" class="slide">
+        <h2>Browser interface</h2>
+        <p>Running Comunica engine in the browser</p>
+        <h3><a href="http://query.linkeddatafragments.org/">http://query.linkeddatafragments.org/</a></h3>
+        <a href="https://github.com/comunica/jQuery-Widget.js/">https://github.com/comunica/jQuery-Widget.js/</a>
+    </section>
+
+    <section id="web-service" class="slide">
+      <h2>Hands-on: creating a Comunica Web Service</h2>
+      <p><strong>Goal:</strong> Set up a Web Service that streams SPARQL results using Comunica</p>
+      <p>
+        This tutorial will introduce streaming results and federated querying.
+      </p>
+      <p>
+        Setting up a Web Service is part of the tutorial so no previous knowledge is required.
+      </p>
+    </section>
+
+    <section id="web-service-requirements" class="slide">
+      <h2>Hands-on: requirements</h2>
+      <ul>
+        <li><a href="https://git-scm.com/">git</a>: <span class="muted">cloning the starting code, and skipping steps</span></li>
+        <li><a href="https://nodejs.org/en/">Node.js</a> <em>(version 8.0 or higher)</em>: <span class="muted">running the code</span></li>
+        <li>A JavaScript editor. <em>(we will use <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>)</em>: <span class="muted">editing the code</span></li>
+      </ul>
+    </section>
+
+    <section id="web-service-steps" class="slide">
+      <h2>Hands-on: five steps</h2>
+      <ol>
+        <li>Set up web service: <span class="muted">Initialize the repository.</span></li>
+        <li>Query 5 people: <span class="muted">Return SPARQL results.</span></li>
+        <li>Stream the results: <span class="muted">Return all results over time.</span></li>
+        <li>Add a parameter: <span class="muted">Support variable input.</span></li>
+        <li>Federated querying: <span class="muted">Query multiple sources.</span></li>
+        <li>Streaming HTML: <span class="muted">Stream a website instead of data.</span></li>
+        <li>Add more fields: <span class="muted">Expand the query.</span></li>
+      </ol>
+      <p class="next">
+        Each step can be skipped by checking out a different git <code>tag</code>.
+        <br />
+        <em class="indent">For example, show the solution of step 2: <code>git checkout tutorial-step/2</code></em>
+      </p>
+    </section>
+
+    <section id="web-service-links" class="slide">
+      <h2>Hands-on: getting started</h2>
+      <p>Each step is explained in detail on the GitHub wiki:</p>
+      <p class="center">
+        <strong><a href="https://github.com/comunica/Tutorial-Comunica-Web-Service">https://github.com/comunica/Tutorial-Comunica-Web-Service</a></strong>
+      </p>
     </section>
 
     <footer>
