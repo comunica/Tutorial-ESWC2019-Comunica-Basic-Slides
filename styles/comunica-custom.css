@@ -178,6 +178,10 @@ li.inactive {
     margin-left: 1em;
 }
 
+.muted {
+    color: gray;
+}
+
 .inline {
     display: inline;
 }
