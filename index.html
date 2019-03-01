@@ -84,7 +84,7 @@
         </ul>
       </div>
       <img src="img/comunica.png" style="max-width:100%; float: right"/>
-      <p style="float: left" class="indent"><strong>Comunica is a meta-query engine created to handle this complexity</strong></p>
+      <p style="float: left" class="indent next"><strong>Comunica is a meta-query engine created to handle this complexity</strong></p>
     </section>
     
     <section id="index" class="slide index">
@@ -103,10 +103,20 @@
       </ul>
     </section>
 
+    <section id="why" class="slide">
+      <h2 class="big">Motivation</h2>
+      <ul>
+        <li>Easily support extensions and variants of existing systems</li>
+        <li>Modular system</li>
+        <li>Semantic configuration
+          <p class="indent">Reusable experiments</p></li>
+      </ul>
+    </section>
+
     <section id="tpf" class="slide">
       <h2 class="big">Triple Pattern Fragments as an alternative RDF interface</h2>
       <ul>
-        <li>2014: <em>Querying Datasets on the Web with High Availability</em> (Verborgh et al.)</li>
+        <li>2014: <a href="http://linkeddatafragments.org/publications/iswc2014.pdf"><em>Querying Datasets on the Web with High Availability</em> (Verborgh et al.)</a></li>
         <li>Alternative interface for exposing linked data</li>
         <li>Created a SPARQL client that supports these interfaces</li>
       </ul>
@@ -114,7 +124,7 @@
     </section>
 
     <section id="tpf2" class="slide">
-      <h2 class="big">Triple Pattern Fragments has many extensions</h2>
+      <h2 class="big">TPF has many extensions</h2>
       <ul>
         <li>Send allowed bindings to server
           <p class="indent"><a class="reference" href="http://olafhartig.de/brTPF-ODBASE2016/">Bindings-Restricted Triple Pattern Fragments (Hartig et al.)</a></p>
@@ -126,7 +136,17 @@
           <p class="indent"><a class="reference" href="http://linkeddatafragments.org/publications/iswc2015-substring.pdf">Substring Filtering for Low-Cost Linked Data Interfaces (Van Herwegen et al.)</a></p>
         </li>
       </ul>
-      <p><strong>Different branches/clients to support these features</strong></p>
+      <p class="next indent"><strong>Different branches/clients to support these features</strong></p>
+    </section>
+
+    <section id="modular" class="slide">
+      <h2 class="big">Modular system</h2>
+      <ul>
+        <li>Quickly switch between different setups</li>
+        <li>Change specific parts in the setup and keep everything else the same</li>
+        <li>Compare the features you want to compare</li>
+        <li>Easily add new features without having to rebuild other requirements</li>
+      </ul>
     </section>
 
     <section id="reusable" class="slide">
@@ -135,26 +155,6 @@
         <li>Problem: repeat experiments, reproduce results, reuse new systems</li>
         <li>Wanted an easy way to share our setup and support reproducibility</li>
         <li>Eat your own dogfood: do this semantically</li>
-      </ul>
-    </section>
-
-    <section id="modular" class="slide">
-      <h2 class="big">Modular system</h2>
-      <ul>
-        <li>Quickly switch between different setups</li>
-        <li>Change specific part in setup and keep everything else the same</li>
-        <li>Compare the features you want to compare</li>
-        <li>Easily add new features without having to rebuild other requirements</li>
-      </ul>
-    </section>
-
-    <section id="why" class="slide">
-      <h2 class="big">Motivation</h2>
-      <ul>
-        <li>Easily support TPF extensions and variants</li>
-        <li>Semantic configuration</li>
-        <li>Modular system
-          <p class="indent">Support more than just TPF</p></li>
       </ul>
     </section>
 
@@ -168,9 +168,9 @@
 
     <section id="actor-model" class="slide">
       <h2>Modularity using the <em>actor</em> model</h2>
-      <p class="next indent">Logic is separated into different <em>actors</em>.</p>
-      <p class="next indent">Each actor <em>independently</em> performs a <em>specific task</em>.</p>
-      <ul class="next indent" style="font-style: italic">
+      <p class="indent">Logic is separated into different <em>actors</em></p>
+      <p class="indent">Each actor <em>independently</em> performs a <em>specific task</em>.</p>
+      <ul class="indent" style="font-style: italic">
         <li>JSON-LD parsing actor</li>
         <li>Turtle parsing actor</li>
         <li>SPARQL union actor A</li>
@@ -179,9 +179,9 @@
     </section>
 
     <section id="actor-mediator-bus" class="slide">
-      <h2>Actors can be <em>combined</em> for solving more <em>complex tasks</em>.</h2>
-      <p class="next indent">Actors are grouped in task-specific <em>buses</em>.</p>
-      <p class="next indent"><em>Mediators</em> are responsible for selecting an actor to solve a certain task.</p>
+      <h2>Actors can be <em>combined</em> for solving more <em>complex tasks</em></h2>
+      <p class="indent">Actors are grouped in task-specific <em>buses</em>.</p>
+      <p class="indent"><em>Mediators</em> are responsible for selecting an actor to solve a certain task.</p>
       <p class="next center">
         <img src="img/actor-mediator-bus.svg" style="max-width:100%">
       </p>
@@ -189,17 +189,17 @@
 
     <section id="actor-mediator-bus-example" class="slide">
       <h2>Example: Parse as fast as possible</h2>
-      <p class="next center">
+      <p class="center">
         <img src="img/run-test-phases.svg" style="max-width:100%">
       </p>
     </section>
 
     <section id="modules" class="slide">
       <h2>Modules are wired together through semantic configuration files</h2>
-      <p class="next indent"><a href="https://componentsjs.readthedocs.io/en/latest/">Components.js</a>: a semantic dependency injection framework.</p>
-      <p class="next indent">Configuration files declare and parameterize actors, mediators and buses.</p>
-      <p class="next indent">Links all the building blocks together, without having to do this in the code!</p>
-      <p class="indent"><em>This will be covered more in-depth in the next presentation.</em></p>
+      <p class="indent"><a href="https://componentsjs.readthedocs.io/en/latest/">Components.js</a>: a semantic dependency injection framework.</p>
+      <p class="indent">Configuration files declare and parameterize actors, mediators and buses.</p>
+      <p class="indent">Links all the building blocks together, without having to do this in the code!</p>
+      <p class="next indent"><em>This will be covered more in-depth in the next presentation.</em></p>
     </section>
 
     <section id="index-c" class="slide index">
@@ -213,7 +213,7 @@
     <section id="implementation-details" class="slide">
       <h2>Implementation details</h2>
       <ul>
-        <li>Open-source under MIT license</li>
+        <li><a href="https://github.com/comunica/comunica">Open-source under MIT license</a></li>
         <li>Implemented in TypeScript/JavaScript</li>
         <li>114 separate modules <em>(actors, buses, mediators)</em></li>
         <li>1619 unit tests with a coverage of 100%</li>
@@ -250,7 +250,7 @@
 
     <section id="command-line-interface" class="slide">
       <h2>Query from the Command Line</h2>
-      <p class="indent">After installing <code>@comunica/actor-init-sparql</code> package</p>
+      <p class="indent">After installing the <a href="https://www.npmjs.com/package/@comunica/actor-init-sparql"><code>@comunica/actor-init-sparql</code></a> package</p>
       <p class="indent">Outputs the resulting bindings</p>
       <pre class="indent">
 comunica-sparql &#x3C;datasource-url(s)&#x3E; &#x3C;query&#x3E;
@@ -270,7 +270,7 @@ comunica-sparql http://fragments.dbpedia.org/2015-10/en \
 
     <section id="sparql-interface" class="slide">
       <h2>Set up a SPARQL endpoint</h2>
-      <p class="indent">After installing <code>@comunica/actor-init-sparql</code> package</p>
+      <p class="indent">After installing the <a href="https://www.npmjs.com/package/@comunica/actor-init-sparql"><code>@comunica/actor-init-sparql</code></a> package</p>
       <p class="indent">Provides a functioning SPARQL endpoint</p>
       <pre class="indent">
 comunica-sparql-http &#x3C;context&#x3E;
@@ -293,10 +293,10 @@ comunica-sparql-http \
       <h2>Hands-on: creating a Comunica Web Service</h2>
       <p class="indent"><strong>Goal:</strong> Set up a Web Service that streams SPARQL results using Comunica</p>
       <p class="indent">
-        This tutorial will introduce streaming results and federated querying.
+        This tutorial will introduce streaming results and federated querying
       </p>
       <p class="indent">
-        No previous JavaScript Web Service knowledge required, we start from scratch.
+        No previous JavaScript Web Service knowledge required, we start from scratch
       </p>
     </section>
 
@@ -305,7 +305,7 @@ comunica-sparql-http \
       <ul>
         <li><a href="https://git-scm.com/">git</a>: <span class="muted">cloning the starting code, and skipping steps</span></li>
         <li><a href="https://nodejs.org/en/">Node.js</a> <em>(version 8.0 or higher)</em>: <span class="muted">running the code</span></li>
-        <li>A JavaScript editor. <em>(we will use <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>)</em>: <span class="muted">editing the code</span></li>
+        <li>A JavaScript editor <em>(we will use <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>)</em>: <span class="muted">editing the code</span></li>
       </ul>
     </section>
 
