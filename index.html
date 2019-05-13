@@ -22,7 +22,7 @@
   <body class="shower list" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# org: http://www.w3.org/ns/org# schema: http://schema.org/ cite: http://purl.org/spar/cito/" typeof="schema:PresentationDigitalDocument">
     <header class="caption">
       <div class="title">
-        <h1 property="schema:name">Comunica Tutorial Slides - Basics</h1>
+        <h1 property="schema:name">Comunica Tutorial - Basics</h1>
       </div>
       <div class="captiondata">
         <p class="author" rel="schema:author"><a href="https://data.verborgh.org/people/joachim_van_herwegen">Joachim Van Herwegen</a>, <a href="https://www.rubensworks.net/#me">Ruben Taelman</a></p>
@@ -33,7 +33,7 @@
     </header>
 
     <section id="title" class="slide title">
-      <h2>Comunica Tutorial Slides - Basics</h2>
+      <h2>Comunica Tutorial - Basics</h2>
       <ul class="author inline">
           <li class="current">Joachim Van Herwegen</li>
           <li class="current"><a href="https://www.rubensworks.net/">Ruben Taelman</a></li>
@@ -49,7 +49,7 @@
           <ul>
             <li>Comunica Basics</li>
             <li>Browser demo</li>
-            <li>Hands-on tutorial: Comunica Web Service</li>
+            <li>Hands-on tutorial: Querying with Comunica</li>
           </ul>
         </li>
         <br/>
@@ -290,49 +290,42 @@ comunica-sparql-http \
       <p class="indent">Host custom engines yourself: <a href="https://github.com/comunica/jQuery-Widget.js/">https://github.com/comunica/jQuery-Widget.js/</a></p>
     </section>
 
-    <section id="web-service" class="slide">
-      <h2>Hands-on: creating a Comunica Web Service</h2>
-      <p class="indent"><strong>Goal:</strong> Set up a Web Service that streams SPARQL results using Comunica</p>
+    <section id="querying-data" class="slide">
+      <h2>Hands-on: querying data using Comunica</h2>
+      <p class="indent"><strong>Goal:</strong> Cover the different ways Comunica can be used to query data</p>
       <p class="indent">
-        This tutorial will introduce streaming results and federated querying
+        This tutorial will introduce both command-line tools and code-based querying
       </p>
       <p class="indent">
-        No previous JavaScript Web Service knowledge required, we start from scratch
+        No advanced JavaScript knowledge required, we start from scratch
       </p>
     </section>
 
-    <section id="web-service-requirements" class="slide">
+    <section id="querying-data-requirements" class="slide">
       <h2>Hands-on: requirements</h2>
       <ul>
-        <li><a href="https://git-scm.com/">git</a>: <span class="muted">cloning the starting code, and skipping steps</span></li>
+        <li><a href="https://git-scm.com/">git</a>: <span class="muted">cloning the starting code</span></li>
         <li><a href="https://nodejs.org/en/">Node.js</a> <em>(version 8.0 or higher)</em>: <span class="muted">running the code</span></li>
         <li>A JavaScript editor <em>(we will use <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>)</em>: <span class="muted">editing the code</span></li>
       </ul>
     </section>
 
-    <section id="web-service-steps" class="slide">
+    <section id="querying-data-steps" class="slide">
       <h2>Hands-on: seven steps</h2>
       <ol class="indent">
-        <li>Set up web service: <span class="muted">Initialize the repository.</span></li>
-        <li>Query 5 people: <span class="muted">Return SPARQL results.</span></li>
-        <li>Stream the results: <span class="muted">Return all results over time.</span></li>
-        <li>Add a parameter: <span class="muted">Support variable input.</span></li>
-        <li>Federated querying: <span class="muted">Query multiple sources.</span></li>
-        <li>Streaming HTML: <span class="muted">Stream a website instead of data.</span></li>
-        <li>Add more fields: <span class="muted">Expand the query.</span></li>
+        <li>Querying from the command line: <span class="muted">Query existing sources.</span></li>
+        <li>Querying from different sources: <span class="muted">Create a local source.</span></li>
+        <li>Querying from JavaScript applications: <span class="muted">Add querying to your application.</span></li>
+        <li>Setting up a SPARQL endpoint: <span class="muted">Use Comunica as a proxy.</span></li>
+        <li>Setting up a Web client: <span class="muted">Provide your own interface.</span></li>
       </ol>
-      <p class="next indent">
-        Each step can be skipped by checking out a different git <code>tag</code>.
-        <br />
-        <em class="indent">For example, start from step 2: <code>git checkout tutorial-step/2</code></em>
-      </p>
     </section>
 
-    <section id="web-service-links" class="slide">
+    <section id="querying-data-links" class="slide">
       <h2>Hands-on: getting started</h2>
       <p class="indent">Each step is explained in detail on the GitHub wiki:</p>
       <p class="center">
-        <strong><a href="https://github.com/comunica/Tutorial-Comunica-Web-Service">https://github.com/comunica/Tutorial-Comunica-Web-Service</a></strong>
+        <strong><a href="https://github.com/comunica/Tutorial-Comunica-Querying-Data">https://github.com/comunica/Tutorial-Comunica-Querying-Data</a></strong>
       </p>
     </section>
 
